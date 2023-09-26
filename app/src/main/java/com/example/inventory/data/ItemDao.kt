@@ -12,17 +12,17 @@ import kotlinx.coroutines.flow.Flow
 interface ItemDao {
 
     @Insert(onConflict = OnConflictStrategy.IGNORE)
-    suspend fun insert(item: ItemEntity)
+    suspend fun insert(item: Item)
 
     @Update
-    suspend fun update(item: ItemEntity)
+    suspend fun update(item: Item)
 
     @Delete
-    suspend fun delete(item: ItemEntity)
+    suspend fun delete(item: Item)
 
     @Query("select * from item where id = :id")
-    fun getItem(id: Int): Flow<ItemEntity>
+    fun getItem(id: Int): Flow<Item>
 
     @Query("select * from item order by name asc")
-    fun getItems():Flow<List<ItemEntity>>
+    fun getItems():Flow<List<Item>>
 }
