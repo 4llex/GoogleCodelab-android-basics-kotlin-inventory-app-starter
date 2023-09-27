@@ -19,8 +19,8 @@ abstract class ItemRoomDatabase: RoomDatabase() {
                 val instance = Room.databaseBuilder(
                     context.applicationContext,
                     ItemRoomDatabase::class.java,
-                    "item_database"
-                )//TODO: try change database name?
+                    "inventory_database"
+                )//TODO: try change database name? and try insert a newtable on database
                     .fallbackToDestructiveMigration()
                     .build()
                 INSTANCE = instance

@@ -20,9 +20,9 @@ interface ItemDao {
     @Delete
     suspend fun delete(item: Item)
 
-    @Query("select * from item where id = :id")
+    @Query("select * from items where id = :id")
     fun getItem(id: Int): Flow<Item>
 
-    @Query("select * from item order by name asc")
+    @Query("select * from items order by name asc")
     fun getAllItems():Flow<List<Item>>
 }
