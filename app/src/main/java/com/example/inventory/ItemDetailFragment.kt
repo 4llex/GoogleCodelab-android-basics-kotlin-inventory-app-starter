@@ -80,6 +80,7 @@ class ItemDetailFragment : Fragment() {
             itemCount.text = item.quantityInStock.toString()
 
             //click listener for the button SELL item
+            sellItem.isEnabled = viewModel.isStockAvailable(item)
             sellItem.setOnClickListener {
                 viewModel.sellItem(item)
             }

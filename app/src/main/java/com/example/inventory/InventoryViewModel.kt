@@ -36,6 +36,10 @@ class InventoryViewModel(private val itemDao: ItemDao): ViewModel() {
         }
     }
 
+    fun isStockAvailable(item: Item): Boolean {
+        return (item.quantityInStock > 0)
+    }
+
     private fun insertItem(item: Item) {
         viewModelScope.launch {
             itemDao.insert(item)
