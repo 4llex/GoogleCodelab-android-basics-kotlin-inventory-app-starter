@@ -78,6 +78,11 @@ class ItemDetailFragment : Fragment() {
             itemName.text = item.itemName
             itemPrice.text = item.getFormattedPrice()
             itemCount.text = item.quantityInStock.toString()
+
+            //click listener for the button SELL item
+            sellItem.setOnClickListener {
+                viewModel.sellItem(item)
+            }
         }
     }
 
