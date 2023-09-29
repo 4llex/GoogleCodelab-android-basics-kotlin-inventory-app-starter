@@ -61,6 +61,13 @@ class InventoryViewModel(private val itemDao: ItemDao): ViewModel() {
         return true
     }
 
+    //functions to delete an entity in the database
+    fun deleteItem(item: Item) {
+        viewModelScope.launch {
+            itemDao.delete(item)
+        }
+    }
+
 }
 
 class InventoryViewModelFactory(private val itemDao: ItemDao): ViewModelProvider.Factory {
